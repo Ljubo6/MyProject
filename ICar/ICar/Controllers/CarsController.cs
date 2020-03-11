@@ -1,4 +1,5 @@
 ﻿using ICar.Data.Intrfaces;
+using ICar.Data.Models;
 using ICar.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,14 +19,47 @@ namespace ICar.Controllers
             _allCars = iAllCars;
             _allCategories = iCarsCategory;
         }
-
-        public ViewResult List()
+        [Route("Cars/List")]
+        [Route("Cars/List/{category}")]
+        public ViewResult List(string category)
         {
+            string _category = category;
+            IEnumerable<Car> cars = null;
+            string currentCategory = string.Empty;
+            if (string.IsNullOrEmpty(category))
+            {
+                cars = _allCars.Cars.OrderBy(i => i.Id);
+            }
+            else
+            {
+                if (string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    cars = _allCars.Cars
+                        .Where(i => i.Category.CategoryName.Equals("Електроавтомобили"))
+                        .OrderBy(i => i.Id);
+                    currentCategory = "Електроавтомобили";
+                }
+                else if (string.Equals("fuel", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    cars = _allCars.Cars
+                        .Where(i => i.Category.CategoryName.Equals("Класически автомобили"))
+                        .OrderBy(i => i.Id);
+                    currentCategory = "Класически автомобили";
+                }
+
+                
+
+
+            }
+
+            var carObject = new CarsListViewModel
+            {
+                AllCars = cars,
+                CarCategory = currentCategory
+            };
             ViewBag.Title = "Страница с автомобили";
-            CarsListViewModel obj = new CarsListViewModel();
-            obj.AllCars = _allCars.Cars;
-            obj.CarCategory = "Автомобили";
-            return View(obj);
+
+            return View(carObject);
         }
     }
 }

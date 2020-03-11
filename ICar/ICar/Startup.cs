@@ -56,7 +56,12 @@ namespace ICar
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routs =>
+            {
+                routs.MapRoute(name:"default",template:"{controller=Home}/{action=Index}/{id?}");
+                routs.MapRoute(name:"categoryFilter",template:"Car/{action}/{category?}",defaults: new { Controller="Car",action="List"});
+            });
 
 
             using (var scope = app.ApplicationServices.CreateScope())
