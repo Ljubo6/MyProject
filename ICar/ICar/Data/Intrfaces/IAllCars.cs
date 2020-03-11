@@ -9,7 +9,7 @@ namespace ICar.Data.Intrfaces
     public interface IAllCars
     {
         IEnumerable<Car> Cars { get; }
-        IEnumerable<Car> getFavcars { get;}
+        IEnumerable<Car> GetFavcars { get;}
         Car objectCar(int carId);
     }
 }

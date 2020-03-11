@@ -18,7 +18,7 @@ namespace ICar.Data.Repository
         }
         public IEnumerable<Car> Cars => appDbContext.Car.Include(c => c.Category);
 
-        public IEnumerable<Car> getFavcars => appDbContext.Car.Where(p => p.IsFavorite).Include(c => c.Category);
+        public IEnumerable<Car> GetFavcars => appDbContext.Car.Where(p => p.IsFavorite).Include(c => c.Category);
 
         public Car objectCar(int carId) => appDbContext.Car.FirstOrDefault(p => p.Id == carId);
 

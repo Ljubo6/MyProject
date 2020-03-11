@@ -74,7 +74,7 @@ namespace ICar.Data.Mocks
                 };
             }
         }
-        public IEnumerable<Car> getFavcars { get; set; }
+        public IEnumerable<Car> GetFavcars { get; set; }
 
         public Car objectCar(int carId)
         {
