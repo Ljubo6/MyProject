@@ -9,14 +9,15 @@ namespace ICar.Data
 {
     public class AppDbContext : DbContext
     {
-        private readonly DbContextOptions<AppDbContext> options;
+        //private readonly DbContextOptions<AppDbContext> options;
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
-            this.options = options;
+            //this.options = options;
         }
         public DbSet<Car> Car { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ShopCartItem> ShopCartItem { get; set; }
     }
 }

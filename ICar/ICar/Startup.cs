@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ICar.Data;
 using ICar.Data.Intrfaces;
 using ICar.Data.Mocks;
+using ICar.Data.Models;
 using ICar.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,9 +31,22 @@ namespace ICar
         {
             //services.AddMvc();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_confstring.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IAllCars,CarRepository>();
-            services.AddTransient<ICarsCategory,CategoryRepository>();
+            services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<ICarsCategory, CategoryRepository>();
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
+
+
+
+            services.AddMvc();
+
+            services.AddMemoryCache();
+            services.AddSession();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +55,9 @@ namespace ICar
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
+
 
             using (var scope = app.ApplicationServices.CreateScope())
             {
@@ -49,20 +65,6 @@ namespace ICar
                 DbObjects.Initial(context);
             }
 
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-
-            //app.UseRouting();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
         }
     }
 }
