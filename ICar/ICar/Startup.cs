@@ -33,6 +33,7 @@ namespace ICar
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_confstring.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
