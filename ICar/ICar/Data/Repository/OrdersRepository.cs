@@ -21,6 +21,7 @@ namespace ICar.Data.Repository
         {
             order.OrderTime = DateTime.Now;
             appDbContext.Order.Add(order);
+            appDbContext.SaveChanges();
 
             var items = shopCart.ListShopItems;
 
