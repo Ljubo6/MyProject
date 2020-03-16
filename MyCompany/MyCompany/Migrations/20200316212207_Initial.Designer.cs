@@ -10,7 +10,7 @@ using MyCompany.Domain;
 namespace MyCompany.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200316193420_Initial")]
+    [Migration("20200316212207_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace MyCompany.Migrations
                         new
                         {
                             Id = "1e8bd192-8a8d-4be7-8b3f-c592b48c3d12",
-                            ConcurrencyStamp = "e5893a73-a8a7-48b6-8069-2ebc1a4c31d2",
+                            ConcurrencyStamp = "09a3ffa1-6ed9-4988-a809-aa654bded01a",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -150,13 +150,13 @@ namespace MyCompany.Migrations
                         {
                             Id = "c9ac017a-07d6-4d2b-b069-5019ba92e041",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2473760e-133f-4acc-9d12-5feb4db452fd",
+                            ConcurrencyStamp = "0ec4ae05-ea76-4a5e-9154-322b8b4282d4",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIiJ1JddbfpMxIIbw3Yaj+ez7mU4eMrofcevXeGLjSSLXxIt0HDNNuI8ySguIO+Ikg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIEf07zkUUK7CqR1Fe/Y0SJo+2a2kgzERmqVhASQbJq89R3oTi7NdNKkRfVtO5aZIQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -279,7 +279,7 @@ namespace MyCompany.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TitleImagePathj")
+                    b.Property<string>("TitleImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -318,7 +318,7 @@ namespace MyCompany.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TitleImagePathj")
+                    b.Property<string>("TitleImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -330,7 +330,7 @@ namespace MyCompany.Migrations
                         {
                             Id = new Guid("3544418b-d7bd-4e09-b31e-645dd7fa6ef0"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(5195),
+                            DateAdded = new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(745),
                             Text = "Съдържанието са запълва от администратора",
                             Title = "Главна"
                         },
@@ -338,7 +338,7 @@ namespace MyCompany.Migrations
                         {
                             Id = new Guid("b5ff4f9b-44c1-4afe-8308-253ef49c2925"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(7633),
+                            DateAdded = new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(3101),
                             Text = "Съдържанието са запълва от администратора",
                             Title = "Нашите услуги"
                         },
@@ -346,7 +346,7 @@ namespace MyCompany.Migrations
                         {
                             Id = new Guid("7eebac08-7334-45d6-b5c3-731bee4677cc"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(7706),
+                            DateAdded = new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(3163),
                             Text = "Съдържанието са запълва от администратора",
                             Title = "Контакти"
                         });

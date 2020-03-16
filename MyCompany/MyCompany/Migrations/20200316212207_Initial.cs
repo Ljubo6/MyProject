@@ -51,7 +51,7 @@ namespace MyCompany.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    TitleImagePathj = table.Column<string>(nullable: true),
+                    TitleImagePath = table.Column<string>(nullable: true),
                     MetaTitle = table.Column<string>(nullable: true),
                     MetaDescription = table.Column<string>(nullable: true),
                     MetaKeywords = table.Column<string>(nullable: true),
@@ -71,7 +71,7 @@ namespace MyCompany.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Subtitle = table.Column<string>(nullable: true),
-                    TitleImagePathj = table.Column<string>(nullable: true),
+                    TitleImagePath = table.Column<string>(nullable: true),
                     MetaTitle = table.Column<string>(nullable: true),
                     MetaDescription = table.Column<string>(nullable: true),
                     MetaKeywords = table.Column<string>(nullable: true),
@@ -194,21 +194,21 @@ namespace MyCompany.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1e8bd192-8a8d-4be7-8b3f-c592b48c3d12", "e5893a73-a8a7-48b6-8069-2ebc1a4c31d2", "admin", "ADMIN" });
+                values: new object[] { "1e8bd192-8a8d-4be7-8b3f-c592b48c3d12", "09a3ffa1-6ed9-4988-a809-aa654bded01a", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9ac017a-07d6-4d2b-b069-5019ba92e041", 0, "2473760e-133f-4acc-9d12-5feb4db452fd", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEIiJ1JddbfpMxIIbw3Yaj+ez7mU4eMrofcevXeGLjSSLXxIt0HDNNuI8ySguIO+Ikg==", null, false, "", false, "admin" });
+                values: new object[] { "c9ac017a-07d6-4d2b-b069-5019ba92e041", 0, "0ec4ae05-ea76-4a5e-9154-322b8b4282d4", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEIEf07zkUUK7CqR1Fe/Y0SJo+2a2kgzERmqVhASQbJq89R3oTi7NdNKkRfVtO5aZIQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "TextFields",
-                columns: new[] { "Id", "CodeWord", "DateAdded", "MetaDescription", "MetaKeywords", "MetaTitle", "Subtitle", "Text", "Title", "TitleImagePathj" },
+                columns: new[] { "Id", "CodeWord", "DateAdded", "MetaDescription", "MetaKeywords", "MetaTitle", "Subtitle", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("3544418b-d7bd-4e09-b31e-645dd7fa6ef0"), "PageIndex", new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(5195), null, null, null, null, "Съдържанието са запълва от администратора", "Главна", null },
-                    { new Guid("b5ff4f9b-44c1-4afe-8308-253ef49c2925"), "PageServices", new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(7633), null, null, null, null, "Съдържанието са запълва от администратора", "Нашите услуги", null },
-                    { new Guid("7eebac08-7334-45d6-b5c3-731bee4677cc"), "PageContacts", new DateTime(2020, 3, 16, 19, 34, 20, 44, DateTimeKind.Utc).AddTicks(7706), null, null, null, null, "Съдържанието са запълва от администратора", "Контакти", null }
+                    { new Guid("3544418b-d7bd-4e09-b31e-645dd7fa6ef0"), "PageIndex", new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(745), null, null, null, null, "Съдържанието са запълва от администратора", "Главна", null },
+                    { new Guid("b5ff4f9b-44c1-4afe-8308-253ef49c2925"), "PageServices", new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(3101), null, null, null, null, "Съдържанието са запълва от администратора", "Нашите услуги", null },
+                    { new Guid("7eebac08-7334-45d6-b5c3-731bee4677cc"), "PageContacts", new DateTime(2020, 3, 16, 21, 22, 6, 895, DateTimeKind.Utc).AddTicks(3163), null, null, null, null, "Съдържанието са запълва от администратора", "Контакти", null }
                 });
 
             migrationBuilder.InsertData(
