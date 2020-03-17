@@ -26,7 +26,8 @@ namespace MyCompany.Controllers
             ViewBag.returnUrl = returnUrl;
             return View(new LoginViewModel());
         }
-
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login (LoginViewModel model,string returnUrl)
         {
             if (ModelState.IsValid)
@@ -46,6 +47,7 @@ namespace MyCompany.Controllers
             }
             return View(model);
         }
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
